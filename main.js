@@ -1,84 +1,69 @@
-// 'use strict';
 
-// // brings in the assert module for unit testing
-// const assert = require('assert');
-// // brings in the readline module to access the command line
-// const readline = require('readline');
-// // use the readline module to print out to the command line
-// const rl = readline.createInterface({
-//   input: process.stdin,
-//   output: process.stdout
-// });
+// Complete each of the following exercises:
+// Use a do...while loop to console.log the numbers from 1 to 1000.
+//FIX BUG WHERE I'M OUTPUTTING A STRING!!!!
 
+let result = [];
+let i = 0;
+do {
+  i = i + 1;
+  result = result + i;
+} while (i < 1000);
+console.log(result);
 
-const pigLatin = () => {
-  let word = document.getElementById("input").value
-  word= word.toLowerCase().trim();
-  const vowels = ["a", "e", "i", "o", "u"];
+// Create an object (with keys and values) called person with the following data:
+// firstName: "Jane",
+// lastName: "Doe",
+// birthDate: "Jan 5, 1925",
+// gender: "female"
 
-// holds new word for output
-  let pigWord=""; 
+const person = {
+  firstName: "Jane",
+  lastName: "Doe",
+  birthDate: "Jan 5, 1925",
+  gender: "female"
+};
 
-  //If it doesn't start with a vowel than by default it starts with a constanant- if/else statement
+// Create a function that logs out the keys of the object using Object.keys().
+console.log(Object.keys(person));
 
-  if(vowels.indexOf(word[0]) > -1){
-    pigWord = word + "yay";
-    return pigWord;
-  } else{
-    let firstMatch = word.match(/[aeiou]/g) || 0;
-    let vowels = word.indexOf (firstMatch [0]);
-    pigWord = word.substring(vowels) + word.substring(0,vowels) + "ay";
-    return document.getElementById("translation").innerHTML += pigWord; 
+// Create a function that logs out the keys and values of the object using Object.entries().
+console.log(Object.entries(person));
+
+// Create an arrayOfPersons that contains multiple "people" objects. 
+//You can simply copy/paste the person object you made above multiple times. 
+//Feel free to change the values to reflect multiple people you might have in your database.
+
+let arrayOfPersons = [
+  {
+    firstName: "Jane",
+    lastName: "Doe",
+    birthDate: "Jan 5, 1920",
+    gender: "female"
+  },
+  {
+    firstName: "John",
+    lastName: "Doe",
+    birthDate: "Jan 24, 1945",
+    gender: "male"
+  },
+  {
+    firstName: "Joanna",
+    lastName: "Doe",
+    birthDate: "Feb 5, 1905",
+    gender: "female"
   }
+]
 
-  
-  }
-
-// the first function called in the program to get an input from the user
-// to run the function use the command: node main.js
-// to close it ctrl + C
-// const getPrompt = () => {
-//   rl.question('word ', (answer) => {
-//     console.log( pigLatin(answer) );
-//     getPrompt();
-//   });
-// }
-
-// // Unit Tests
-// // to use them run the command: npm test main.js
-// // to close them ctrl + C
-// if (typeof describe === 'function') {
-
-//   describe('#pigLatin()', () => {
-//     it('should translate a simple word', () => {
-//       assert.equal(pigLatin('car'), 'arcay');
-//       assert.equal(pigLatin('dog'), 'ogday');
-//     });
-//     it('should translate a complex word', () => {
-//       assert.equal(pigLatin('create'), 'eatecray');
-//       assert.equal(pigLatin('valley'), 'alleyvay');
-//     });
-//     it('should attach "yay" if word begins with vowel', () => {
-//       assert.equal(pigLatin('egg'), 'eggyay');
-//       assert.equal(pigLatin('emission'), 'emissionyay');
-//     });
-//     it('should lowercase and trim word before translation', () => {
-//       assert.equal(pigLatin('HeLlO '), 'ellohay');
-//       assert.equal(pigLatin(' RoCkEt'), 'ocketray');
-//     });
-//   });
-// } else {
-
-//   getPrompt();
-
-// }
+// Create a function that uses a for...of loop and an if statement to console.log the value 
+//associated with the key birthDate of each object if the birth year is an odd number.
 
 
-// **********
-//   HINTS
-// **********
 
-// break your code into pieces and focus on one piece at a time...
-// 1. if word begins with a vowel send to one function: adds "yay"
-// 2. if word begins with a consonant send to another function: splices off beginning, returns word with new ending.
-// 3. if multiple words, create array of words, loop over them, sending them to different functions and creating a new array with the new words.
+// Use .map() to map over the arrayOfPersons and console.log() their information.
+// Use .filter() to filter the persons array and console.log only males in the array.
+// Create a function that returns true if the value of birthDate is before Jan 1, 1990.
+// Use .filter() to filter the persons array and console.log only people that were born before Jan 1, 1990.
+// BONUS - Create a function that returns true if the date passed to it is >= 21 years in the past.
+// BONUS - .filter() out the people in the array who are younger than 21.
+
